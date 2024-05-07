@@ -55,8 +55,8 @@ total_frames = 25; %25 fps videos have been trimed to 1 sec for this example
 INRF_VQA = zeros(1,total_frames);
 for i = 1:total_frames
 
-    Ref = yuvRead('Abs1_25fps.yuv',768,432,i);
-    Dist = yuvRead('Abs4_25fps.yuv',768,432,i);
+    Ref = yuvRead('bs1_25fps.yuv',768,432,i);
+    Dist = yuvRead('bs4_25fps.yuv',768,432,i);
 
 
     % INRF computation: Reference Video
