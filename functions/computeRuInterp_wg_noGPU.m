@@ -1,17 +1,4 @@
-function [L_mu,Ru] = computeRuInterp_wg_noGPU(u, param, steps)
-
-	if (ndims(u) == 3)
-		% Obtain the linear luminance
-        L=(rgb2lab(u))/100;
-        L=L(:,:,1);
-	else
-		L = im2double(u);
-    end
-
-	% Calculate local mean
-	h=fspecial('Gaussian', param.sizeMu, param.sigmaMu);
-	L_mu = imfilter(L, h, param.boundMu);
-
+function Ru = computeRuInterp_wg_noGPU(u, param, steps)
 
     % Calculate g*u
 %     if sigmag == 1
